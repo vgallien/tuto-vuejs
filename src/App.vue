@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <header-top></header-top>
     <contenu></contenu>
   </div>
 </template>
@@ -8,11 +8,13 @@
 <script>
 
 import Contenu from './components/Contenu.vue'
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    'contenu': Contenu
+    'contenu': Contenu,
+    'header-top': Header
   }
 }
 </script>

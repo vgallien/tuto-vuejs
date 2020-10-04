@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <p>{{ txt }}</p>
-        <liste></liste>
+    <div class="container mt-5">
+
+        <h1>{{ titre }}</h1>
+
+        <liste :myArr="myArr" :txt="txt"></liste>
     </div>
 </template>
 
@@ -12,8 +14,19 @@
         name: 'Contenu',
         data() {
             return {
-                txt: 'Je suis le contenu'
+                myArr: [
+                    { titre: 'Inception', date: 2010 },
+                    { titre: 'Avatar', date: 2009 },
+                    { titre: 'Seven', date: 1955 }
+                ],
+                txt: 'Hello World',
+                titre: 'Je suis le titre'
             }
+        },
+        methods: {
+            // changementTitre: function(nvTitre) {
+            //     this.titre = nvTitre
+            // }
         },
         components: {
             'liste': Liste
@@ -22,5 +35,7 @@
 </script>
 
 <style>
-
+    h1 {
+        margin-top: 100px !important;
+    }
 </style>
