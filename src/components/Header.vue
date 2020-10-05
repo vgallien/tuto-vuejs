@@ -15,16 +15,32 @@
                 titre: 'Mon titre de base'
             }
         },
+        beforeCreate() {
+            console.log('Il va être crée');
+        },
         created() {
+            console.log('Le composant est crée !');
             bus.$on('changeTitre', (data) => {
                 this.titre = data
             })
+        },
+        beforeMount() {
+            console.log('Il va être monté dans le DOM !');
+        },
+        mounted() {
+            console.log('Il est intégré dans le DOM !');
+        },
+        beforeUpdate() {
+            console.log('Avant mise à jour !');
+        },
+        updated() {
+            console.log('Mis à jour !');
         }
     }
 
 </script>
 
-<style>
+<style scoped>
     .header-top {
         position: fixed;
         top: 0;
